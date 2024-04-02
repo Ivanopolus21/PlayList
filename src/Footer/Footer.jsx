@@ -44,7 +44,7 @@ export function Footer ({OnAboutMeClick, OnLinkHoverLeft, OnLinkHoverRight, OnLi
                     }}
                 >|</p>
 
-                <a href="t.me/ivanopolus21"
+                <a href="http://t.me/ivanopolus21"
                    className="footerLink"
                    id="telegramButton"
                    onMouseEnter={OnLinkHoverRight}
