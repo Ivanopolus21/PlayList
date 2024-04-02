@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/GameList/static/css/main.6384579f.css",
-    "main.js": "/GameList/static/js/main.2db304a3.js",
+    "main.js": "/GameList/static/js/main.56e49d8c.js",
     "static/js/592.b75e677d.chunk.js": "/GameList/static/js/592.b75e677d.chunk.js",
     "static/media/terraria.png": "/GameList/static/media/terraria.5ed8f2ad126e4da0658d.png",
     "static/media/dva_hearth.png": "/GameList/static/media/dva_hearth.5ae8e8b9c9140c4c4ec5.png",
@@ -18,11 +18,11 @@
     "static/media/check_icon.svg": "/GameList/static/media/check_icon.a045ecf208c751cd75eb62d28a362056.svg",
     "index.html": "/GameList/index.html",
     "main.6384579f.css.map": "/GameList/static/css/main.6384579f.css.map",
-    "main.2db304a3.js.map": "/GameList/static/js/main.2db304a3.js.map",
+    "main.56e49d8c.js.map": "/GameList/static/js/main.56e49d8c.js.map",
     "592.b75e677d.chunk.js.map": "/GameList/static/js/592.b75e677d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6384579f.css",
-    "static/js/main.2db304a3.js"
+    "static/js/main.56e49d8c.js"
   ]
 }
