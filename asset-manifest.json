@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/gamelist/static/css/main.91020d68.css",
-    "main.js": "/gamelist/static/js/main.1587be45.js",
-    "static/js/592.3bcd6475.chunk.js": "/gamelist/static/js/592.3bcd6475.chunk.js",
-    "static/media/dva_hearth.png": "/gamelist/static/media/dva_hearth.5ae8e8b9c9140c4c4ec5.png",
-    "static/media/play_list_logo.png": "/gamelist/static/media/play_list_logo.d37431d79a8d9a61878c.png",
-    "static/media/play_list_logo_dark.png": "/gamelist/static/media/play_list_logo_dark.9d2f318b3486e063805f.png",
-    "static/media/icons8-close.svg": "/gamelist/static/media/icons8-close.f2095136e4261505412282108bd0894e.svg",
-    "static/media/file-add.svg": "/gamelist/static/media/file-add.8a8b0150a0f76c7d936eb105acb85726.svg",
-    "static/media/file-check.svg": "/gamelist/static/media/file-check.057c692c3bb5800e7f1a85e7ce08a989.svg",
-    "static/media/check_icon.svg": "/gamelist/static/media/check_icon.a045ecf208c751cd75eb62d28a362056.svg",
-    "index.html": "/gamelist/index.html",
-    "main.91020d68.css.map": "/gamelist/static/css/main.91020d68.css.map",
-    "main.1587be45.js.map": "/gamelist/static/js/main.1587be45.js.map",
-    "592.3bcd6475.chunk.js.map": "/gamelist/static/js/592.3bcd6475.chunk.js.map"
+    "main.css": "/GameList/static/css/main.91020d68.css",
+    "main.js": "/GameList/static/js/main.c39b019a.js",
+    "static/js/592.3bcd6475.chunk.js": "/GameList/static/js/592.3bcd6475.chunk.js",
+    "static/media/dva_hearth.png": "/GameList/static/media/dva_hearth.5ae8e8b9c9140c4c4ec5.png",
+    "static/media/play_list_logo.png": "/GameList/static/media/play_list_logo.d37431d79a8d9a61878c.png",
+    "static/media/play_list_logo_dark.png": "/GameList/static/media/play_list_logo_dark.9d2f318b3486e063805f.png",
+    "static/media/icons8-close.svg": "/GameList/static/media/icons8-close.f2095136e4261505412282108bd0894e.svg",
+    "static/media/file-add.svg": "/GameList/static/media/file-add.8a8b0150a0f76c7d936eb105acb85726.svg",
+    "static/media/file-check.svg": "/GameList/static/media/file-check.057c692c3bb5800e7f1a85e7ce08a989.svg",
+    "static/media/check_icon.svg": "/GameList/static/media/check_icon.a045ecf208c751cd75eb62d28a362056.svg",
+    "index.html": "/GameList/index.html",
+    "main.91020d68.css.map": "/GameList/static/css/main.91020d68.css.map",
+    "main.c39b019a.js.map": "/GameList/static/js/main.c39b019a.js.map",
+    "592.3bcd6475.chunk.js.map": "/GameList/static/js/592.3bcd6475.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.91020d68.css",
-    "static/js/main.1587be45.js"
+    "static/js/main.c39b019a.js"
   ]
 }
