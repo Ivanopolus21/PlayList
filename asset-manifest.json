@@ -1,10 +1,14 @@
 {
   "files": {
     "main.css": "/GameList/static/css/main.91020d68.css",
-    "main.js": "/GameList/static/js/main.85ae15da.js",
+    "main.js": "/GameList/static/js/main.6e1545cd.js",
     "static/js/592.3bcd6475.chunk.js": "/GameList/static/js/592.3bcd6475.chunk.js",
+    "static/media/terraria.png": "/GameList/static/media/terraria.5ed8f2ad126e4da0658d.png",
     "static/media/dva_hearth.png": "/GameList/static/media/dva_hearth.5ae8e8b9c9140c4c4ec5.png",
+    "static/media/warcraft3.jpg": "/GameList/static/media/warcraft3.99c7ac0a33d4a14048b3.jpg",
     "static/media/play_list_logo.png": "/GameList/static/media/play_list_logo.d37431d79a8d9a61878c.png",
+    "static/media/genshin_impact.jpg": "/GameList/static/media/genshin_impact.4beb566e95c65264d72f.jpg",
+    "static/media/hollow_knight.jpg": "/GameList/static/media/hollow_knight.2b997c9b3da047eef1a2.jpg",
     "static/media/play_list_logo_dark.png": "/GameList/static/media/play_list_logo_dark.9d2f318b3486e063805f.png",
     "static/media/icons8-close.svg": "/GameList/static/media/icons8-close.f2095136e4261505412282108bd0894e.svg",
     "static/media/file-add.svg": "/GameList/static/media/file-add.8a8b0150a0f76c7d936eb105acb85726.svg",
@@ -12,11 +16,11 @@
     "static/media/check_icon.svg": "/GameList/static/media/check_icon.a045ecf208c751cd75eb62d28a362056.svg",
     "index.html": "/GameList/index.html",
     "main.91020d68.css.map": "/GameList/static/css/main.91020d68.css.map",
-    "main.85ae15da.js.map": "/GameList/static/js/main.85ae15da.js.map",
+    "main.6e1545cd.js.map": "/GameList/static/js/main.6e1545cd.js.map",
     "592.3bcd6475.chunk.js.map": "/GameList/static/js/592.3bcd6475.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.91020d68.css",
-    "static/js/main.85ae15da.js"
+    "static/js/main.6e1545cd.js"
   ]
 }
