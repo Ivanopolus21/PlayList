@@ -52,7 +52,7 @@ export function GameWindow({displayType, OnCloseClick, id, state}) {
         if (type === 'Singleplayer') {
             return (
                 <select name="Select your type"
-                        defaultValue={localStorage.getItem(id)}
+                        defaultValue={localStorage.getItem(id) || npy}
                         onChange={(e) => HandleSelectChange(e)}>
                     <option className="select_option1" value='Not played yet' disabled={true}>{choose}</option>
                     <option className="select_option2" value='Completed'>{c}</option>
@@ -62,7 +62,7 @@ export function GameWindow({displayType, OnCloseClick, id, state}) {
         } else if (type === 'Multiplayer' || type === 'Cooperative') {
             return (
                 <select name="Select your type"
-                        defaultValue={localStorage.getItem(id)}
+                        defaultValue={localStorage.getItem(id) || npy}
                         onChange={(e) => HandleSelectChange(e)}>
                     <option className="select_option1" value='Not played yet' defaultValue disabled={true}>{choose}</option>
                     <option className="select_option2" value='Used to play'>{utp}</option>
