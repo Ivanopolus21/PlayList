@@ -118,7 +118,7 @@
 }
 
 /* the smallest size */
-@media only screen and (max-height: 810px) and (max-width: 700px),
+@media only screen and (max-height: 1200px) and (max-width: 700px),
         screen and (max-height: 400px) and (max-width: 1220px){
     #svg_close_button {
         top:10px;
