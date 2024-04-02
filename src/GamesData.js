@@ -1,7 +1,7 @@
-import hollowKnight from './img/hollow_knight.jpg';
-import warcraft from './img/warcraft3.jpg';
-import genshinImpact from './img/genshin_impact.jpg';
-import terraria from './img/terraria.png'
+import hollowKnight from './/assets/img/hollow_knight.jpg';
+import warcraft from './/assets/img/warcraft3.jpg';
+import genshinImpact from './/assets/img/genshin_impact.jpg';
+import terraria from './/assets/img/terraria.png'
 
 const games = [
     {

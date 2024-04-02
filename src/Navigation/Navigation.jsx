@@ -1,9 +1,9 @@
-import React, {useState} from "react";
 import './Navigation.css';
+import React, {useState} from "react";
 import {BrowseButton} from "./BrowseButton";
 import {LibraryButton} from "./LibraryButton";
-import logo from "../img/play_list_logo.png";
-import darkLogo from "../img/play_list_logo_dark.png";
+import logo from "../assets/img/play_list_logo.png";
+import darkLogo from "../assets/img/play_list_logo_dark.png";
 
 export function Navigation({OnNavigationBrowseButtonClick, OnNavigationLibraryButtonClick, OnNavigationLogoClick}) {
     const [logoTheme, setLogoTheme] = useState('light');

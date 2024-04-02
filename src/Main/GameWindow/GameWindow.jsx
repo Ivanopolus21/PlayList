@@ -1,5 +1,5 @@
 import './GameWindow.css';
-import closeButton from '../../img/icons8-close.svg';
+import closeButton from '../../assets/img/icons8-close.svg';
 import games from '../../GamesData';
 
 export function GameWindow({displayType, OnCloseClick, id, state}) {

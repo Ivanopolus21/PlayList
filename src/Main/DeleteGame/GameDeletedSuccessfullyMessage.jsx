@@ -1,6 +1,7 @@
-import confirmButton from "../../img/check_icon.svg";
 import './GameDeletedSuccessfullyMessage.css';
 import games from "../../GamesData";
+import confirmButton from "../../assets/img/check_icon.svg";
+
 export function GameDeletedSuccessfullyMessage({gameId, OnConfirmButtonClick}) {
     return(
         <div className="game_successfully_deleted_window">

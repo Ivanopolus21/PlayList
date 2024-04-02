@@ -1,5 +1,5 @@
 import React from "react";
-import dvaWithHearth from '../../img/dva_hearth.png';
+import dvaWithHearth from '../../assets/img/dva_hearth.png';
 import './/General.css';
 
 export function General({OnGetStartedClick}) {

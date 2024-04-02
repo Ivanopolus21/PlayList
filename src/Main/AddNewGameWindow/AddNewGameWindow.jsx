@@ -1,9 +1,10 @@
-import closeButton from "../../img/icons8-close.svg";
-import documentImg from "../../img/file-add.svg";
-import addedDocumentImg from "../../img/file-check.svg";
 import './AddNewGameWindow.css';
-import {useState} from "react";
 import games from "../../GamesData";
+import closeButton from "../../assets/img/icons8-close.svg";
+import documentImg from "../../assets/img/file-add.svg";
+import addedDocumentImg from "../../assets/img/file-check.svg";
+import boop from "../../assets/sounds/[Overwatch] Sombra's Boop Voice Line.mp3"
+import {useState} from "react";
 import {GameAddedConfirmation} from "./GameAddedConfirmation/GameAddedConfirmation";
 
 export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick}) {
@@ -94,7 +95,7 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
     }
 
     function playAudio() {
-        const boopSound = new Audio('/sounds/[Overwatch] Sombra\'s Boop Voice Line.mp3');
+        const boopSound = new Audio(boop);
         boopSound.play();
     }
 

@@ -1,4 +1,4 @@
-import confirmButton from "../../../img/check_icon.svg";
+import confirmButton from "../../../assets/img/check_icon.svg";
 import './GameAddedConfirmation.css';
 
 export function GameAddedConfirmation({OnConfirmButtonClick}) {
