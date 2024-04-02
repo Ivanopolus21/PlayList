@@ -1,0 +1,44 @@
+.game_add_confirmation_window {
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 10; /* Specify a stack order in case you're using a different order for other elements */
+    /*cursor: pointer; !* Add a pointer on hover *!*/
+    display: flex;
+    /*display: none;*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game_add_confirmation_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #292932;
+    margin: 20%;
+    padding: 0 1% 2% 1%;
+    /*border-radius: 30%;*/
+    /*position: relative;*/
+}
+
+.game_add_confirmation_container .svg_confirm_button {
+    /*position: absolute;*/
+    height: 60px;
+    width: 60px;
+    top : 0;
+    right : 5px;
+    opacity: 0.5;
+    /*box-shadow: 5px 5px 10px rgba(243, 238, 238, 0.5);*/
+    border-radius: 100px;
+}
+
+.game_add_confirmation_container .svg_confirm_button:hover {
+    opacity: 1;
+}

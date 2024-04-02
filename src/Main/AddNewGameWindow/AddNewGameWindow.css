@@ -1,0 +1,149 @@
+.add_new_game_window {
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 4; /* Specify a stack order in case you're using a different order for other elements */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#add_new_game_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #292932;
+    margin: 20%;
+    position: relative;
+    gap: 10px;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+#add_new_game_container hr {
+    width: 100%;
+}
+
+.game_image_input {
+    font-size: 20px;
+}
+
+#add_new_game_container p {
+    margin: 10px;
+}
+
+.game_description_container hr {
+    width: 100%;
+}
+
+#add_new_game_container .svg_close_button {
+    position: absolute;
+    top : 0;
+    right : 5px;
+    opacity: 0.5;
+    border-radius: 100px;
+}
+
+#add_new_game_container .svg_close_button:hover {
+    opacity: 1;
+}
+
+.add_new_game_input {
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#game_description_textarea {
+    resize: none;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+label {
+    font-size: 18px;
+}
+
+.add_button {
+    margin-bottom: 10px;
+    padding: 10px 30px 10px 30px;
+    font-size: 25px;
+    background-color: #38383d;
+    color: white;
+    display: inline-block;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.add_button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.add_button span:after {
+    content: '\002b';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.add_button:hover span {
+    padding-right: 25px;
+}
+
+.add_button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+#game_image_input_picture {
+    width: 50px;
+    height: 50px;
+}
+
+@media only screen and (max-width: 701px),
+        screen and (max-height: 800px){
+    .add_new_game_window {
+        font-size: 13px;
+    }
+
+    #game_image_input_picture {
+        width: 80px;
+        max-height: 40px;
+    }
+
+    #add_new_game_container label{
+        font-size: 13px;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    .add_new_game_input {
+        font-size: 13px;
+        max-height: 20px;
+    }
+
+    hr {
+        margin: 2px;
+    }
+
+    #add_new_game_container .svg_close_button {
+        top : 10px;
+        right : 5px;
+        width: 30px;
+    }
+}

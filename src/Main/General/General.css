@@ -1,0 +1,12 @@
+.dva_image {
+    width: 400px;
+    height: 440px;
+}
+
+.get_started_button {
+    padding:20px;
+    font-size: 20px;
+    background-color: #282c34;
+    border: 1px solid white;
+    color: white;
+}

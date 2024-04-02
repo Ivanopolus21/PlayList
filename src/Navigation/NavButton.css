@@ -1,0 +1,23 @@
+.tab {
+    background-color: #282c34;
+    border: none;
+    color:white;
+    float: left;
+    padding: 30px;
+    font-size: 20px;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.tab:hover {
+    background: #444852;
+}
+
+@media only screen and (max-width: 355px) {
+    .logo_circle {
+        display: none;
+    }
+}

@@ -1,0 +1,69 @@
+address {
+    background-color: #25252d;
+    /*background-color: #282c34;*/
+    /*background-color: #2b2b32;*/
+    /*background-color: #1f1f26;*/
+    /*background-color: #292932;*/
+    /*background-color: #212127;*/
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 1vmin);
+    color: white;
+}
+
+a:link {
+    color: white;
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+.line {
+    transition: all .2s ease-in-out;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+#aboutMeButton {
+    cursor:pointer;
+    opacity: 0.7;
+}
+
+#aboutMeButton:hover {
+    opacity: 1;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #3f3f48;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #282c34;
+
+}
+
+@media only screen and (max-width: 355px) {
+    address {
+        gap: 20px;
+    }
+}
