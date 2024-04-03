@@ -74,7 +74,6 @@ export function GameWindow({displayType, OnCloseClick, id, state}) {
         function HandleSelectChange(e) {
             value = e.target.value;
         }
-
     }
 
     return (

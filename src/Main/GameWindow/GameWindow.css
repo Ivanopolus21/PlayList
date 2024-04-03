@@ -118,7 +118,7 @@
 }
 
 /* the smallest size */
-@media only screen and (max-height: 1200px) and (max-width: 700px),
+@media only screen and (max-height: 1200px) and (max-width: 1000px),
         screen and (max-height: 400px) and (max-width: 1220px){
     #svg_close_button {
         top:10px;
@@ -163,7 +163,7 @@
 
 
 @media only screen and (min-width: 700px) and (max-width: 1020px) and (min-height: 400px) and (max-height: 700px),
-            screen and (min-width: 700px) and (max-width: 1020px) and (min-height: 700px) and (max-height: 810px),
+            screen and (min-width: 700px) and (max-width: 1020px) and (min-height: 700px) and (max-height: 1010px),
             screen and (min-width: 1020px) and (max-width: 1920px) and (min-height: 400px) and (max-height: 700px){
     #svg_close_button {
         top: 16px;
