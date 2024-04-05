@@ -7,6 +7,22 @@ import {AddNewGameWindow} from "../AddNewGameWindow/AddNewGameWindow";
 import {GameDeletedConfirmation} from "../DeleteGame/GameDeletedConfirmation";
 import {DbRemoveTest, DbUpdateTest} from "../../Config/DatabaseConfigs";
 
+// function updateOnlineStatus(){
+//     console.log(`Your network status is ${navigator.onLine ? "Online" : "Offline"} `);
+//     if (navigator.onLine) {
+//     } else {
+//         console.log('offline');
+//     }
+//     // console.log(webState);
+// }
+//
+// document.addEventListener("DOMContentLoaded", function () {
+//     // console.log(webState);
+//     updateOnlineStatus();
+//     window.addEventListener('online',  updateOnlineStatus);
+//     window.addEventListener('offline', updateOnlineStatus);
+// });
+
 export function BrowsePage({displayType, newGameDisplay, deleteGameDisplay, OnGameClick, OnAddNewGameClick, OnDeleteGameClick, OnCloseClick, mainState}) {
     const [currentGameId, setCurrentGameID] = useState(0);
     const [gameNum, setGameNum] = useState(games.length);
