@@ -3,7 +3,7 @@ import closeButton from '../../assets/img/icons8-close.svg';
 import games from '../../GamesData';
 
 export function GameWindow({displayType, OnCloseClick, id, state}) {
-    let value = 'Not played yet';
+    let value = '';
     const listGames = games.map(game =>
         <>
             <img src={closeButton} alt="Close button" id="svg_close_button" onClick={OnCloseClick}/>
@@ -32,31 +32,31 @@ export function GameWindow({displayType, OnCloseClick, id, state}) {
 
     function handleMainButton(id, buttonType) {
         if (buttonType === 'save') {
-            if (value !== 'Not played yet') {
+            if (value !== '') {
                 // alert('Option ' + value + ' was saved for ' + id + '!');
                 localStorage.setItem(id, value);
             }
         } else if(buttonType === 'delete') {
-            localStorage.setItem(id, "Not played yet");
+            localStorage.setItem(id, '');
         }
         OnCloseClick();
     }
 
     function Select({type}) {
-        const npy = 'Not played yet';
-        const c = 'Completed';
-        const cp = 'Currently playing';
-        const utp = 'Used to play';
-        const choose = 'Add to library';
+        const npy = '';
+        const completedState = 'Completed';
+        const currentlyPlayingState = 'Currently playing';
+        const usedToPlayState = 'Used to play';
+        const chooseState = 'Add to library';
 
         if (type === 'Singleplayer') {
             return (
                 <select name="Select your type"
                         defaultValue={localStorage.getItem(id) || npy}
                         onChange={(e) => HandleSelectChange(e)}>
-                    <option className="select_option1" value='Not played yet' disabled={true}>{choose}</option>
-                    <option className="select_option2" value='Completed'>{c}</option>
-                    <option className="select_option3" value='Currently playing'>{cp}</option>
+                    <option className="select_option1" value='' disabled={true}>{chooseState}</option>
+                    <option className="select_option2" value='Completed'>{completedState}</option>
+                    <option className="select_option3" value='Currently playing'>{currentlyPlayingState}</option>
                 </select>
             )
         } else if (type === 'Multiplayer' || type === 'Cooperative') {
@@ -64,9 +64,9 @@ export function GameWindow({displayType, OnCloseClick, id, state}) {
                 <select name="Select your type"
                         defaultValue={localStorage.getItem(id) || npy}
                         onChange={(e) => HandleSelectChange(e)}>
-                    <option className="select_option1" value='Not played yet' defaultValue disabled={true}>{choose}</option>
-                    <option className="select_option2" value='Used to play'>{utp}</option>
-                    <option className="select_option3" value='Currently playing'>{cp}</option>
+                    <option className="select_option1" value='' disabled={true}>{chooseState}</option>
+                    <option className="select_option2" value='Used to play'>{usedToPlayState}</option>
+                    <option className="select_option3" value='Currently playing'>{currentlyPlayingState}</option>
                 </select>
             )
         }

@@ -163,7 +163,7 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
                                setGameInputs({...gameInputs, src: e.target.files[0]})
                            }}
                            style={{display: 'none'}}
-                           required={true}
+                           // required={true}
                     />
                     <hr/>
 
@@ -212,7 +212,6 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
                         }}
                         name="gameType"
                         defaultValue={'Not played yet'}
-                        required={true}
                     >
                         <option value="Singleplayer">Singleplayer</option>
                         <option value="Multiplayer">Multiplayer</option>
