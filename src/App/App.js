@@ -5,6 +5,9 @@ import React, {useState} from "react";
 import {Navigation} from "../Navigation/Navigation";
 
 export default function App() {
+    /**
+     * State variable to keep tracking the state of the App.
+     */
     const [state, setState] = useState("start");
     const [leftHover, setLeftHover] = useState(false);
     const [rightHover, setRightHover] = useState(false);

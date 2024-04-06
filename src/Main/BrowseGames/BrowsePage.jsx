@@ -1,27 +1,29 @@
 import './BrowsePage.css';
+import {useState} from "react";
 import games from '../../GamesData';
 import closeButton from "../../assets/img/icons8-close.svg";
-import {useState} from "react";
 import {GameWindow} from "../GameWindow/GameWindow";
 import {AddNewGameWindow} from "../AddNewGameWindow/AddNewGameWindow";
 import {GameDeletedConfirmation} from "../DeleteGame/GameDeletedConfirmation";
 import {DbRemoveTest, DbUpdateTest} from "../../Config/DatabaseConfigs";
 
-// function updateOnlineStatus(){
-//     console.log(`Your network status is ${navigator.onLine ? "Online" : "Offline"} `);
-//     if (navigator.onLine) {
-//     } else {
-//         console.log('offline');
-//     }
-//     // console.log(webState);
-// }
-//
-// document.addEventListener("DOMContentLoaded", function () {
-//     // console.log(webState);
-//     updateOnlineStatus();
-//     window.addEventListener('online',  updateOnlineStatus);
-//     window.addEventListener('offline', updateOnlineStatus);
-// });
+
+/**
+ * Function that checks online status of the application.
+ */
+function updateOnlineStatus(){
+    console.log(`Your network status is ${navigator.onLine ? "Online" : "Offline"} `);
+    if (navigator.onLine) {
+    } else {
+        console.log('offline');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    updateOnlineStatus();
+    window.addEventListener('online',  updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+});
 
 export function BrowsePage({displayType, newGameDisplay, deleteGameDisplay, OnGameClick, OnAddNewGameClick, OnDeleteGameClick, OnCloseClick, mainState}) {
     const [currentGameId, setCurrentGameID] = useState(0);
@@ -100,4 +102,3 @@ export function BrowsePage({displayType, newGameDisplay, deleteGameDisplay, OnGa
         </div>
     )
 }
-

@@ -4,7 +4,7 @@
   "description": "The library for games, where you can add some games to your own library and choose their state:'Played before', 'Currently Playing' and so on.",
   "icons": [ {
     "src": "favicon.ico",
-    "sizes": "16x16"
+    "sizes": "64x64"
   }],
   "start_url": ".",
   "display": "standalone",

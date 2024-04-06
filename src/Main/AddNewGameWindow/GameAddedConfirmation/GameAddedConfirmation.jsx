@@ -1,6 +1,12 @@
 import confirmButton from "../../../assets/img/check_icon.svg";
 import './GameAddedConfirmation.css';
 
+/**
+ * Component that appears when person added a game.
+ * @param OnConfirmButtonClick
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export function GameAddedConfirmation({OnConfirmButtonClick}) {
     return(
         <div className="game_add_confirmation_window">

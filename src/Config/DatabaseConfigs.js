@@ -1,5 +1,9 @@
 import games from "../GamesData";
 
+/**
+ * Function for removing games from the IndexedDB.
+ * @param {int} id - The id of the game.
+ */
 export function DbRemoveTest(id) {
     const dbName = "New_Games_DB";
     const request = indexedDB.open(dbName, 3);
@@ -34,7 +38,7 @@ export function DbRemoveTest(id) {
         //Delete from IndexedDB
         gamesStore.delete(id);
         //Delete the choice from localStorage
-        localStorage.setItem(id, 'Not played yet');
+        localStorage.setItem(id, '');
         //Delete from "games" array
         games.splice(id, 1);
 
@@ -47,6 +51,10 @@ export function DbRemoveTest(id) {
     }
 }
 
+/**
+ * Function for updating games IDs from the IndexedDB when game with smaller ID was deleted.
+ * @param {int} id - The id of the game.
+ */
 export function DbUpdateTest(id) {
     const dbName = "New_Games_DB";
     const request = indexedDB.open(dbName, 3);
@@ -83,13 +91,11 @@ export function DbUpdateTest(id) {
 
             for (let i = 1; i <= count.result; i++) {
                 const gameStoreIdRequest = gamesStore.get(id + i);
-
                 gameStoreIdRequest.onsuccess = () => {
+
                     let counter = i - 1;
                     const gameToUpdateID = gameStoreIdRequest.result;
-
                     if (gameToUpdateID !== undefined) {
-                        // console.log(gameToUpdateID.title);
                         let gameBackup = {
                             id: id + counter,
                             title: gameToUpdateID.title,
@@ -112,40 +118,10 @@ export function DbUpdateTest(id) {
                             console.log("Oh no! The request failed for ID: " + (id + i) + " that tried to change for ID: " + id)
                         }
                     }
-                    /*todo: 22.03, 12:17 ОСНОВНІ ПРОБЛЕМИ: після видалення однієї з ігор воно має всі айдішки поміняти, а міняє лише одне наче
-                     */
                 }
-
                 gameStoreIdRequest.onerror = () => {
                     console.log("Error gameStore ID request");
                 }
-
-                // const gameStoreIdRequest = gamesStore.get(id + 1);
-                //
-                // gameStoreIdRequest.onsuccess = () => {
-                //
-                //     const gameToUpdateID = gameStoreIdRequest.result;
-                //
-                //     if (gameToUpdateID !== undefined) {
-                //         gameToUpdateID.id = id;
-                //
-                //         const updateIdRequest = gamesStore.put(gameToUpdateID);
-                //         gamesStore.delete(id + 1);
-                //         updateIdRequest.onsuccess = () => {
-                //             console.log("YAY! ID UPDATE SUCCEED!")
-                //         }
-                //         updateIdRequest.onerror = () => {
-                //             console.log("Oh no! The request failed for ID: " + (id + 1) + " that tried to change for ID: " + id)
-                //         }
-                //     }
-                //
-                //     /*todo: 22.03, 12:17 ОСНОВНІ ПРОБЛЕМИ: після видалення однієї з ігор воно має всі айдішки поміняти, а міняє лише одне наче
-                //      */
-                // }
-                //
-                // gameStoreIdRequest.onerror = () => {
-                //     console.log(gamesStore.get(id + 1).result);
-                // }
             }
         }
     }

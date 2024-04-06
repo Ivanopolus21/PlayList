@@ -19,26 +19,23 @@ export function Footer ({OnAboutMeClick, OnLinkHoverLeft, OnLinkHoverRight, OnLi
                    onMouseLeave={OnLinkHoverNot}
                 > Email </a>
 
-                <p
-                    className="line"
-                    style={{
-                        transform: `scale(${leftScaleValue})`
-                    }}
+                <p className="line"
+                   style={{
+                       transform: `scale(${leftScaleValue})`
+                   }}
                 >|</p>
 
-                <a
-                    id="aboutMeButton"
-                    className="footerLink"
-                    onClick={() => {
+                <a id="aboutMeButton"
+                   className="footerLink"
+                   onClick={() => {
                         OnAboutMeClick();
                         ScrollToTheTop();
-                    }}
-                    onMouseEnter={OnLinkHoverBoth}
-                    onMouseLeave={OnLinkHoverNot}
+                   }}
+                   onMouseEnter={OnLinkHoverBoth}
+                   onMouseLeave={OnLinkHoverNot}
                 > About me </a>
 
-                <p
-                    className="line"
+                <p className="line"
                     style={{
                         transform: `scale(${rightScaleValue})`
                     }}

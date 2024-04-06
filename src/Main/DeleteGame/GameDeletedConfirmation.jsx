@@ -1,7 +1,7 @@
 import './GameDeletedConfirmation.css';
 import {useState} from "react";
-import {GameDeletedSuccessfullyMessage} from "./GameDeletedSuccessfullyMessage";
 import deleteBoopSound from "../../assets/sounds/infographic-pop-1-197868.mp3";
+import {GameDeletedSuccessfullyMessage} from "./GameDeletedSuccessfullyMessage";
 
 export function GameDeletedConfirmation({displayType, gameId, OnYesButtonClick, OnNoButtonClick}) {
     const [isDeletedSuccessfullyMessageShown, setIsDeletedSuccessfullyMessageShown] = useState(false);

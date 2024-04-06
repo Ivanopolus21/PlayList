@@ -1,17 +1,24 @@
 import './AddNewGameWindow.css';
+import {useState} from "react";
 import games from "../../GamesData";
 import closeButton from "../../assets/img/icons8-close.svg";
 import documentImg from "../../assets/img/file-add.svg";
 import addedDocumentImg from "../../assets/img/file-check.svg";
 import boop from "../../assets/sounds/[Overwatch] Sombra's Boop Voice Line.mp3"
-import {useState} from "react";
 import {GameAddedConfirmation} from "./GameAddedConfirmation/GameAddedConfirmation";
 
 export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick}) {
+    /**
+     * useState hook that represents a state of the image that represents whether the user
+     * added the picture for a new game or not yet.
+     */
     const [imageForPicture, setImageForPicture] = useState('notAdded');
     const [isGameAdded, setIsGameAdded] = useState(false);
     const [gameInputs, setGameInputs] = useState({id: 0, src: "", title: "", description: "", type: "", genres: ""});
 
+    /**
+     * Function that adds a new game to the IndexedDB store.
+     */
     function dbAddTest() {
         const dbName = "New_Games_DB";
         const request = indexedDB.open(dbName, 3);
@@ -89,7 +96,7 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
         document.querySelector('#add_new_game_container').reset();
     }
 
-    function ResetTheIsAddedBoolean() {
+    function resetTheIsAddedBoolean() {
         setIsGameAdded(false);
         OnCloseClick();
     }
@@ -116,8 +123,12 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
         const title = document.forms["addNewGameForm"]["gameTitle"].value;
         const desc = document.forms["addNewGameForm"]["gameDescription"].value;
         const genres = document.forms["addNewGameForm"]["gameGenres"].value;
-        console.log(img);
-        if (img === "" || title === "" || desc === "" || genres === "") {
+
+        if (img === "") {
+            alert("Image field is required!");
+            return false;
+        }
+        if (title === "" || desc === "" || genres === "") {
             alert("Every field is required!");
             return false;
         }
@@ -163,7 +174,6 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
                                setGameInputs({...gameInputs, src: e.target.files[0]})
                            }}
                            style={{display: 'none'}}
-                           // required={true}
                     />
                     <hr/>
 
@@ -179,7 +189,7 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
                         minLength={2}
                         maxLength={20}
                         autoFocus={true}
-                        // required={true}
+                        required={true}
                         placeholder="Overwatch"
                     ></input>
                     <hr/>
@@ -237,7 +247,7 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
                     <button className="add_button" type="submit"><span>Add </span></button>
                 </form>
             </div>
-            {isGameAdded === true && <GameAddedConfirmation OnConfirmButtonClick={ResetTheIsAddedBoolean}/>}
+            {isGameAdded === true && <GameAddedConfirmation OnConfirmButtonClick={resetTheIsAddedBoolean}/>}
         </>
     )
 }

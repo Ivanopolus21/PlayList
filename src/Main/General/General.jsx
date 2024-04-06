@@ -1,6 +1,7 @@
+import './/General.css';
 import React from "react";
 import dvaWithHearth from '../../assets/img/dva_hearth.png';
-import './/General.css';
+
 
 export function General({OnGetStartedClick}) {
     return (

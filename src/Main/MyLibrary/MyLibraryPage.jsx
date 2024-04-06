@@ -1,33 +1,39 @@
-import games from "../../GamesData";
 import './MyLibraryPage.css';
-import {GameWindow} from "../GameWindow/GameWindow";
 import {useState} from "react";
+import games from "../../GamesData";
+import {GameWindow} from "../GameWindow/GameWindow";
 
 export function MyLibraryPage({displayType, OnLibraryGameClick, OnCloseClick, mainState}) {
     const [currentLibraryGameId, setCurrentLibraryGameID] = useState(0);
-    const [sortedBy, setSortedBy] = useState('notSorted');
+    const [filteredBy, setFilteredBy] = useState('notFiltered');
     const completed = 'Completed';
     const usedToPlay = 'Used to play'
     const currentlyPlaying = 'Currently playing';
-    const notPlayedYet = 'Not played yet';
+    const notPlayedYet = '';
 
-    function checkForGameState(id, sortType) {
+    /**
+     * Function for displaying current chosen state of the games.
+     * @param id - The game id.
+     * @param filterType - The type of filter (Completed, Currently Playing...)
+     * @returns {string}
+     */
+    function checkForGameState(id, filterType) {
         let gameStateBasedOnId = localStorage.getItem(id);
-        switch (sortType) {
+        switch (filterType) {
             case 'showCompleted':
-                if (gameStateBasedOnId === completed && sortedBy === 'completed') {
+                if (gameStateBasedOnId === completed && filteredBy === 'completed') {
                     return 'flex';
                 } else {
                     return 'none';
                 }
             case 'showUsedToPlay':
-                if (gameStateBasedOnId === usedToPlay && sortedBy === 'usedToPlay') {
+                if (gameStateBasedOnId === usedToPlay && filteredBy === 'usedToPlay') {
                     return 'flex';
                 } else {
                     return 'none';
                 }
             case 'showCurrentlyPlaying':
-                if (gameStateBasedOnId === currentlyPlaying && sortedBy === 'currentlyPlaying') {
+                if (gameStateBasedOnId === currentlyPlaying && filteredBy === 'currentlyPlaying') {
                     return 'flex';
                 } else {
                     return 'none';
@@ -35,7 +41,7 @@ export function MyLibraryPage({displayType, OnLibraryGameClick, OnCloseClick, ma
             default:
                 if (gameStateBasedOnId === completed || gameStateBasedOnId === currentlyPlaying || gameStateBasedOnId === usedToPlay) {
                     return 'flex';
-                } else if (gameStateBasedOnId === notPlayedYet || gameStateBasedOnId === undefined || sortedBy !== 'notPlayedYet'){
+                } else if (gameStateBasedOnId === notPlayedYet || gameStateBasedOnId === undefined || filteredBy !== 'notPlayedYet'){
                     return 'none';
                 } else {
                     return 'none';
@@ -137,23 +143,23 @@ export function MyLibraryPage({displayType, OnLibraryGameClick, OnCloseClick, ma
         }
     }
 
-    function ChangeLibrarySort(sortBy) {
-        setSortedBy(sortBy);
+    function ChangeLibraryFilter(filterBy) {
+        setFilteredBy(filterBy);
     }
 
     return (
         <div className="library_main">
             <aside className="sort_buttons_list">
-                <button onClick={() => ChangeLibrarySort('notSorted')} className="sort_button">Show all</button>
-                <button onClick={() => ChangeLibrarySort('completed')} className="sort_button">{completed}</button>
-                <button onClick={() => ChangeLibrarySort('usedToPlay')} className="sort_button">{usedToPlay}</button>
-                <button onClick={() => ChangeLibrarySort('currentlyPlaying')} className="sort_button">{currentlyPlaying}</button>
+                <button onClick={() => ChangeLibraryFilter('notFiltered')} className="sort_button">Show all</button>
+                <button onClick={() => ChangeLibraryFilter('completed')} className="sort_button">{completed}</button>
+                <button onClick={() => ChangeLibraryFilter('usedToPlay')} className="sort_button">{usedToPlay}</button>
+                <button onClick={() => ChangeLibraryFilter('currentlyPlaying')} className="sort_button">{currentlyPlaying}</button>
             </aside>
             <ul className='library_game_list'>
-                {sortedBy === 'notSorted' && returnTheList('all')}
-                {sortedBy === 'completed' && returnTheList('completed')}
-                {sortedBy === 'usedToPlay' && returnTheList('usedToPlay')}
-                {sortedBy === 'currentlyPlaying' && returnTheList('currentlyPlaying')}
+                {filteredBy === 'notFiltered' && returnTheList('all')}
+                {filteredBy === 'completed' && returnTheList('completed')}
+                {filteredBy === 'usedToPlay' && returnTheList('usedToPlay')}
+                {filteredBy === 'currentlyPlaying' && returnTheList('currentlyPlaying')}
             </ul>
             <
                 GameWindow

@@ -1,10 +1,10 @@
+import './Main.css';
+import games from "../GamesData";
 import React, {useEffect, useState} from "react";
 import {MyLibraryPage} from "./MyLibrary/MyLibraryPage";
 import {BrowsePage} from "./BrowseGames/BrowsePage";
 import {AboutMe} from "../Footer/AboutMe";
 import {General} from "./General/General";
-import './Main.css';
-import games from "../GamesData";
 
 let didInit = false;
 export function Main({state, OnGetStartedClick}) {
@@ -12,6 +12,9 @@ export function Main({state, OnGetStartedClick}) {
     const [addNewGameDisplay, setAddNewGameDisplay] = useState('none');
     const [deleteGameDisplay, setDeleteGameDisplay] = useState('none');
 
+    /**
+     * Function to display all saved games after the Main render.
+     */
     useEffect(() => {
         if (!didInit) {
             didInit = true;
@@ -19,6 +22,9 @@ export function Main({state, OnGetStartedClick}) {
         }
     }, []);
 
+    /**
+     * Function that retrieves all saved games in IndexedDB.
+     */
     function dbGetTest() {
         const dbName = "New_Games_DB";
         const request = indexedDB.open(dbName, 3);
@@ -56,7 +62,6 @@ export function Main({state, OnGetStartedClick}) {
                 if (cursor) {
                     games.push(cursor.value);
                     cursor.continue();
-                    console.log(`It is value: ${cursor.value}`);
                 } else {
                     console.log(`Got all games: ${games}`);
                 }
