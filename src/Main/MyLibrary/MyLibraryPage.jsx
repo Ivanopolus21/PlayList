@@ -165,7 +165,7 @@ export function MyLibraryPage({displayType, OnLibraryGameClick, OnCloseClick, ma
                 GameWindow
                 displayType={displayType}
                 OnCloseClick={OnCloseClick}
-                id={currentLibraryGameId}
+                theGameId={currentLibraryGameId}
                 state={mainState}
             />
         </div>

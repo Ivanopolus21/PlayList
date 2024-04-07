@@ -41,7 +41,7 @@ export function BrowsePage({displayType, newGameDisplay, deleteGameDisplay, OnGa
                      OnDeleteGameClick();
                      HandleGameClick(game.id);
                  }}
-                 style={{display: game.id >= 4 ? 'inline' : 'none'}}
+                 style={{display: game.id > 14 ? 'inline' : 'none'}}
             />
             <img
                 src={game.src}
@@ -96,7 +96,7 @@ export function BrowsePage({displayType, newGameDisplay, deleteGameDisplay, OnGa
                 GameWindow
                 displayType={displayType}
                 OnCloseClick={OnCloseClick}
-                id={currentGameId}
+                theGameId={currentGameId}
                 state={mainState}
             />
         </div>
