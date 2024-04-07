@@ -23,6 +23,7 @@
     margin: 20%;
     position: relative;
     min-width: 1000px;
+    z-index: 5;
 }
 
 #game_container p {

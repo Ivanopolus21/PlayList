@@ -2,7 +2,7 @@ import './GameWindow.css';
 import games from '../../GamesData';
 import closeButton from '../../assets/img/icons8-close.svg';
 
-export function GameWindow({displayType, OnCloseClick, id, state}) {
+export function GameWindow({displayType, OnCloseClick, theGameId, state}) {
     let value = '';
     const listGames = games.map(game =>
         <>
@@ -52,7 +52,7 @@ export function GameWindow({displayType, OnCloseClick, id, state}) {
         if (type === 'Singleplayer') {
             return (
                 <select name="Select your type"
-                        defaultValue={localStorage.getItem(id) || npy}
+                        defaultValue={localStorage.getItem(theGameId) || npy}
                         onChange={(e) => HandleSelectChange(e)}>
                     <option className="select_option1" value='' disabled={true}>{chooseState}</option>
                     <option className="select_option2" value='Completed'>{completedState}</option>
@@ -62,7 +62,7 @@ export function GameWindow({displayType, OnCloseClick, id, state}) {
         } else if (type === 'Multiplayer' || type === 'Cooperative') {
             return (
                 <select name="Select your type"
-                        defaultValue={localStorage.getItem(id) || npy}
+                        defaultValue={localStorage.getItem(theGameId) || npy}
                         onChange={(e) => HandleSelectChange(e)}>
                     <option className="select_option1" value='' disabled={true}>{chooseState}</option>
                     <option className="select_option2" value='Used to play'>{usedToPlayState}</option>
@@ -77,9 +77,9 @@ export function GameWindow({displayType, OnCloseClick, id, state}) {
     }
 
     return (
-        <div className="game_window" style={{display: displayType}}>
-            <div id="game_container">
-                {listGames[id]}
+        <div className="game_window" onClick={OnCloseClick} style={{display: displayType}}>
+            <div id="game_container" onClick={(e) => {e.stopPropagation()}} >
+                {listGames[theGameId]}
             </div>
         </div>
     )
