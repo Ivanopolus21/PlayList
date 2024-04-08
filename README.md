@@ -8,7 +8,7 @@ The website is available on the following [link](https://ivanopolus21.github.io/
 If you want to clone on download the project, in the project directory, you can run:
 
 ### `npm start`
-
+! You must have npm installed on your machine!
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
