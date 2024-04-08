@@ -31,6 +31,9 @@
     cursor:pointer;
     visibility: hidden;
     align-self: end;
+    max-width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .listItem:hover .gameTitle{

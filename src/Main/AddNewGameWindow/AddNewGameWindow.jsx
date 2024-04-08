@@ -187,7 +187,7 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
                             setGameInputs({...gameInputs, title: e.target.value})
                         }}
                         minLength={2}
-                        maxLength={20}
+                        maxLength={50}
                         autoFocus={true}
                         required={true}
                         placeholder="Overwatch"
