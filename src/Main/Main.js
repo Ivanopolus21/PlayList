@@ -5,12 +5,15 @@ import {MyLibraryPage} from "./MyLibrary/MyLibraryPage";
 import {BrowsePage} from "./BrowseGames/BrowsePage";
 import {AboutMe} from "../Footer/AboutMe";
 import {General} from "./General/General";
+import {useOnlineStatus} from "../hooks/useOnlineStatus";
 
 let didInit = false;
+
 export function Main({state, OnGetStartedClick}) {
     const [displayType, setDisplayType] = useState('none');
     const [addNewGameDisplay, setAddNewGameDisplay] = useState('none');
     const [deleteGameDisplay, setDeleteGameDisplay] = useState('none');
+    const isOnline = useOnlineStatus();
 
     /**
      * Function to display all saved games after the Main render.
@@ -96,6 +99,10 @@ export function Main({state, OnGetStartedClick}) {
 
     return (
         <main className="App-main">
+            <div className="online_indicator">
+                <span>{isOnline ? "Online" : "Offline"} </span>
+                <div className="online_square" style={{backgroundColor: isOnline ? "green" : "red"}}></div>
+            </div>
             {state === 'start' && <
                 General
                 OnGetStartedClick={OnGetStartedClick}
@@ -119,6 +126,8 @@ export function Main({state, OnGetStartedClick}) {
                 mainState={state}
             />}
             {state === 'aboutMe' && <AboutMe/>}
+            {/*{onlineCheck === true && <GameAddedConfirmation/>}*/}
+            {/*{onlineCheck === false && <GameDeletedConfirmation/>}*/}
         </main>
     )
 }

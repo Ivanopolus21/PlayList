@@ -2,10 +2,12 @@ import './MyLibraryPage.css';
 import {useState} from "react";
 import games from "../../GamesData";
 import {GameWindow} from "../GameWindow/GameWindow";
+import {useOnlineStatus} from "../../hooks/useOnlineStatus";
 
 export function MyLibraryPage({displayType, OnLibraryGameClick, OnCloseClick, mainState}) {
     const [currentLibraryGameId, setCurrentLibraryGameID] = useState(0);
     const [filteredBy, setFilteredBy] = useState('notFiltered');
+    const isOnline = useOnlineStatus();
     const completed = 'Completed';
     const usedToPlay = 'Used to play'
     const currentlyPlaying = 'Currently playing';
@@ -60,7 +62,7 @@ export function MyLibraryPage({displayType, OnLibraryGameClick, OnCloseClick, ma
                     <div
                         className="overlay"
                     ></div>
-                    <img
+                    {isOnline && <img
                         src={game.src}
                         className="gameImage"
                         alt={game.title + ' poster'}
@@ -69,26 +71,41 @@ export function MyLibraryPage({displayType, OnLibraryGameClick, OnCloseClick, ma
                             OnLibraryGameClick();
                             HandleLibraryGameClick(game.id)
                         }}
-                    />
+                    />}
+                    {!isOnline && <div
+                        className="libraryGameOfflineSquare"
+                        onClick={() => {
+                            OnLibraryGameClick();
+                            HandleLibraryGameClick(game.id)
+                        }}
+                    ></div>}
                     <p className="gameTitle">{game.title}</p>
                 </li>
             ))
         } else if (type === 'completed') {
             return (games.map(game =>
-                <li key={game.id} className="listItem" style={{display: checkForGameState(game.id, 'showCompleted')}}>
-                    <div
+                    <li key={game.id} className="listItem"
+                        style={{display: checkForGameState(game.id, 'showCompleted')}}>
+                        <div
                         className="overlay"
                     ></div>
-                    <img
-                        src={game.src}
-                        className="gameImage"
-                        alt={game.title + ' poster'}
+                        {isOnline && <img
+                            src={game.src}
+                            className="gameImage"
+                            alt={game.title + ' poster'}
 
-                        onClick={() => {
-                            OnLibraryGameClick();
-                            HandleLibraryGameClick(game.id)
-                        }}
-                    />
+                            onClick={() => {
+                                OnLibraryGameClick();
+                                HandleLibraryGameClick(game.id)
+                            }}
+                        />}
+                        {!isOnline && <div
+                            className="libraryGameOfflineSquare"
+                            onClick={() => {
+                                OnLibraryGameClick();
+                                HandleLibraryGameClick(game.id)
+                            }}
+                        ></div>}
                     <p
                         className="gameTitle"
                         style={{}}
@@ -102,7 +119,7 @@ export function MyLibraryPage({displayType, OnLibraryGameClick, OnCloseClick, ma
                     <div
                         className="overlay"
                     ></div>
-                    <img
+                    {isOnline && <img
                         src={game.src}
                         className="gameImage"
                         alt={game.title + ' poster'}
@@ -111,7 +128,14 @@ export function MyLibraryPage({displayType, OnLibraryGameClick, OnCloseClick, ma
                             OnLibraryGameClick();
                             HandleLibraryGameClick(game.id)
                         }}
-                    />
+                    />}
+                    {!isOnline && <div
+                        className="libraryGameOfflineSquare"
+                        onClick={() => {
+                            OnLibraryGameClick();
+                            HandleLibraryGameClick(game.id)
+                        }}
+                    ></div>}
                     <p
                         className="gameTitle"
                         style={{}}
@@ -124,7 +148,7 @@ export function MyLibraryPage({displayType, OnLibraryGameClick, OnCloseClick, ma
                     <div
                         className="overlay"
                     ></div>
-                    <img
+                    {isOnline && <img
                         src={game.src}
                         className="gameImage"
                         alt={game.title + ' poster'}
@@ -133,7 +157,14 @@ export function MyLibraryPage({displayType, OnLibraryGameClick, OnCloseClick, ma
                             OnLibraryGameClick();
                             HandleLibraryGameClick(game.id)
                         }}
-                    />
+                    />}
+                    {!isOnline && <div
+                        className="libraryGameOfflineSquare"
+                        onClick={() => {
+                            OnLibraryGameClick();
+                            HandleLibraryGameClick(game.id)
+                        }}
+                    ></div>}
                     <p
                         className="gameTitle"
                         style={{}}

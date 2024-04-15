@@ -1,9 +1,11 @@
 import './/General.css';
 import React from "react";
 import dvaWithHearth from '../../assets/img/dva_hearth.png';
+import {useOnlineStatus} from "../../hooks/useOnlineStatus";
 
 
 export function General({OnGetStartedClick}) {
+    const isOnline = useOnlineStatus();
     return (
         <>
             <p>PlayList</p>
@@ -13,7 +15,7 @@ export function General({OnGetStartedClick}) {
                 Feel free to add some personal games too!<br/>On the "Library" all your games displayed.<br/>Have fun!
             </p>
             <button className="get_started_button" onClick={OnGetStartedClick}>Get started with Browse!</button><br/>
-            <img src={dvaWithHearth} alt="D.Va" className="dva_image"/>
+            {isOnline && <img src={dvaWithHearth} alt="D.Va" className="dva_image"/>}
         </>
     )
 }

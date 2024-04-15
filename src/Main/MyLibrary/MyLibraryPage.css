@@ -90,6 +90,16 @@ ul {
     float: left;
 }
 
+.libraryGameOfflineSquare {
+    align-self: center;
+    border-radius: 20px;
+    z-index: 2;
+    background-size: cover;
+    width: 200px;
+    height:300px;
+    transition: 0.5s;
+}
+
 @media only screen and (max-width: 685px) {
     .library_main {
         display: flex;

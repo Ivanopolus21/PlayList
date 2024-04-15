@@ -2,8 +2,6 @@ import './AddNewGameWindow.css';
 import {useState} from "react";
 import games from "../../GamesData";
 import closeButton from "../../assets/img/icons8-close.svg";
-import documentImg from "../../assets/img/file-add.svg";
-import addedDocumentImg from "../../assets/img/file-check.svg";
 import boop from "../../assets/sounds/[Overwatch] Sombra's Boop Voice Line.mp3"
 import {GameAddedConfirmation} from "./GameAddedConfirmation/GameAddedConfirmation";
 
@@ -13,6 +11,11 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
      * added the picture for a new game or not yet.
      */
     const [imageForPicture, setImageForPicture] = useState('notAdded');
+    /**
+     * useStater hook that represents SVG changes using JS.
+     */
+    const [svgPath, setSvgPath] = useState('M9 17L15 13 M9 12 L15 17M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H15.8C16.9201 21 17.4802 21 17.908 20.782C18.2843 20.5903 18.5903 20.2843 18.782 19.908C19 19.4802 19 18.9201 19 17.8V9M13 3L19 9M13 3V7.4C13 7.96005 13 8.24008 13.109 8.45399C13.2049 8.64215 13.3578 8.79513 13.546 8.89101C13.7599 9 14.0399 9 14.6 9H19');
+    const [svgStroke, setSvgStroke] = useState('red');
     const [isGameAdded, setIsGameAdded] = useState(false);
     const [gameInputs, setGameInputs] = useState({id: 0, src: "", title: "", description: "", type: "", genres: ""});
 
@@ -84,10 +87,13 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
     };
 
     function changeTheFileImage() {
+        rewriteSvg();
         setImageForPicture('added');
     }
 
     function resetTheFileImage() {
+        setSvgPath('M9 17L15 13 M9 12 L15 17M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H15.8C16.9201 21 17.4802 21 17.908 20.782C18.2843 20.5903 18.5903 20.2843 18.782 19.908C19 19.4802 19 18.9201 19 17.8V9M13 3L19 9M13 3V7.4C13 7.96005 13 8.24008 13.109 8.45399C13.2049 8.64215 13.3578 8.79513 13.546 8.89101C13.7599 9 14.0399 9 14.6 9H19');
+        setSvgStroke("red");
         setImageForPicture('notAdded');
     }
 
@@ -104,6 +110,17 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
     function playAudio() {
         const boopSound = new Audio(boop);
         boopSound.play();
+    }
+
+    function rewriteSvg() {
+        const theSvg = document.querySelector("#game_image_input_picture");
+        theSvg.setAttribute('d', "M9 15L11 17L15 13M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H15.8C16.9201 21 17.4802 21 17.908 20.782C18.2843 20.5903 18.5903 20.2843 18.782 19.908C19 19.4802 19 18.9201 19 17.8V9M13 3L19 9M13 3V7.4C13 7.96005 13 8.24008 13.109 8.45399C13.2049 8.64215 13.3578 8.79513 13.546 8.89101C13.7599 9 14.0399 9 14.6 9H19");
+        theSvg.setAttribute("stroke", "white");
+        setSvgPath(theSvg.getAttribute('d'));
+        setSvgStroke(theSvg.getAttribute("stroke"));
+        // console.log(document.getElementById('game_image_input_picture').getAttribute('d'));
+        // console.log(document.getElementById('game_image_input_picture').getAttribute('stroke'));
+        // console.log(svgPath)
     }
 
     function HandleFormSubmit(e) {
@@ -158,11 +175,33 @@ export function AddNewGameWindow({displayType, OnCloseClick, OnAddNewGameClick})
                         {imageForPicture === 'notAdded' ? "Choose a picture:" : "Your choice was saved!"}
                     </label>
                     <label htmlFor="game_image_input">
-                        <img src={imageForPicture === 'notAdded' ? documentImg : addedDocumentImg}
-                             alt="Document search img"
-                             className="add_new_game_input"
+                        {/*<img src={imageForPicture === 'notAdded' ? documentImg : addedDocumentImg}*/}
+                        {/*     alt="Document search img"*/}
+                        {/*     className="add_new_game_input"*/}
+                        {/*     id="game_image_input_picture"*/}
+                        {/*/>*/}
+                        <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg"
                              id="game_image_input_picture"
-                        />
+                             className="add_new_game_input"
+                        >
+                            <path
+                                d={svgPath}
+                                // d="M9 17L15 13 M9 12 L15 17M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H15.8C16.9201 21 17.4802 21 17.908 20.782C18.2843 20.5903 18.5903 20.2843 18.782 19.908C19 19.4802 19 18.9201 19 17.8V9M13 3L19 9M13 3V7.4C13 7.96005 13 8.24008 13.109 8.45399C13.2049 8.64215 13.3578 8.79513 13.546 8.89101C13.7599 9 14.0399 9 14.6 9H19"
+                                // stroke="red"
+                                stroke={svgStroke}
+                                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+
+                        {/*{imageForPicture !== 'notAdded' && <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"*/}
+                        {/*                                        xmlns="http://www.w3.org/2000/svg"*/}
+                        {/*                                        id="game_image_input_picture"*/}
+                        {/*                                        className="add_new_game_input"*/}
+                        {/*> <path*/}
+                        {/*    d="M9 15L11 17L15 13M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H15.8C16.9201 21 17.4802 21 17.908 20.782C18.2843 20.5903 18.5903 20.2843 18.782 19.908C19 19.4802 19 18.9201 19 17.8V9M13 3L19 9M13 3V7.4C13 7.96005 13 8.24008 13.109 8.45399C13.2049 8.64215 13.3578 8.79513 13.546 8.89101C13.7599 9 14.0399 9 14.6 9H19"*/}
+                        {/*    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>*/}
+                        {/*</svg> }*/}
+
                     </label>
                     <input type="file"
                            accept="image/*"

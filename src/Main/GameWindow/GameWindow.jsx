@@ -1,14 +1,17 @@
 import './GameWindow.css';
 import games from '../../GamesData';
 import closeButton from '../../assets/img/icons8-close.svg';
+import {useOnlineStatus} from "../../hooks/useOnlineStatus";
 
 export function GameWindow({displayType, OnCloseClick, theGameId, state}) {
+    const isOnline = useOnlineStatus();
     let value = '';
     const listGames = games.map(game =>
         <>
             <img src={closeButton} alt="Close button" id="svg_close_button" onClick={OnCloseClick}/>
             <div className="game_image_and_title">
-                <img alt=" poster" src={game.src}/>
+                {isOnline && <img alt=" poster" src={game.src}/>}
+                {!isOnline && <div className="windowGameOfflineSquare"></div>}
                 <p id="game_title">{game.title}</p>
             </div>
             <div className="vertical_line"></div>
@@ -23,7 +26,8 @@ export function GameWindow({displayType, OnCloseClick, theGameId, state}) {
                     <Select
                         type={game.type}
                     />
-                    <button className="window_button" onClick={() => handleMainButton(game.id, 'save')}>Save</button>
+                    <button className="window_button" onClick={() =>
+                        handleMainButton(game.id, 'save')}>Save</button>
                     {state === "library" && <button className="window_button" onClick={() => handleMainButton(game.id, 'delete')}>Delete</button>}
                 </div>
             </div>

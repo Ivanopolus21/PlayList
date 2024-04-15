@@ -6,35 +6,20 @@ import {GameWindow} from "../GameWindow/GameWindow";
 import {AddNewGameWindow} from "../AddNewGameWindow/AddNewGameWindow";
 import {GameDeletedConfirmation} from "../DeleteGame/GameDeletedConfirmation";
 import {DbRemoveTest, DbUpdateTest} from "../../Config/DatabaseConfigs";
-
-
-/**
- * Function that checks online status of the application.
- */
-function updateOnlineStatus(){
-    console.log(`Your network status is ${navigator.onLine ? "Online" : "Offline"} `);
-    if (navigator.onLine) {
-    } else {
-        console.log('offline');
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    updateOnlineStatus();
-    window.addEventListener('online',  updateOnlineStatus);
-    window.addEventListener('offline', updateOnlineStatus);
-});
+import {useOnlineStatus} from "../../hooks/useOnlineStatus";
 
 export function BrowsePage({displayType, newGameDisplay, deleteGameDisplay, OnGameClick, OnAddNewGameClick, OnDeleteGameClick, OnCloseClick, mainState}) {
     const [currentGameId, setCurrentGameID] = useState(0);
     const [gameNum, setGameNum] = useState(games.length);
+    const isOnline = useOnlineStatus();
+
 
     const gameList = games.map(game =>
         <li key={game.id} className="listItem">
             <div
                 className="overlay"
             ></div>
-            <img src={closeButton}
+            {isOnline && <img src={closeButton}
                  alt="Close button"
                  className="svg_remove_game_button"
                  onClick={() => {
@@ -42,8 +27,8 @@ export function BrowsePage({displayType, newGameDisplay, deleteGameDisplay, OnGa
                      HandleGameClick(game.id);
                  }}
                  style={{display: game.id > 14 ? 'inline' : 'none'}}
-            />
-            <img
+            />}
+            {isOnline && <img
                 src={game.src}
                 className="gameImage"
                 alt={game.title + ' poster'}
@@ -51,12 +36,20 @@ export function BrowsePage({displayType, newGameDisplay, deleteGameDisplay, OnGa
                     OnGameClick();
                     HandleGameClick(game.id);
                 }}
-            />
+            />}
+            {!isOnline && <div
+                className="gameOfflineSquare"
+                onClick={() => {
+                    OnGameClick();
+                    HandleGameClick(game.id);
+                }}
+            ></div>}
+
             <p
                 className="gameTitle"
             >{game.title}</p>
         </li>
-    )
+    );
 
     function HandleGameClick(gameId) {
         setCurrentGameID(gameId);
@@ -75,7 +68,7 @@ export function BrowsePage({displayType, newGameDisplay, deleteGameDisplay, OnGa
     return (
         <div className="browse_page" >
             <p>Current number of games: {gameNum}</p>
-            <button className="add_game_button" onClick={OnAddNewGameClick}>Add new game</button>
+            {isOnline && <button className="add_game_button" onClick={OnAddNewGameClick}>Add new game</button>}
             <ul className="gameList">
                 {gameList}
             </ul>
