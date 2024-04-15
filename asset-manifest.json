@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/GameList/static/css/main.78b8bf3c.css",
-    "main.js": "/GameList/static/js/main.a1e1f1e0.js",
+    "main.css": "/GameList/static/css/main.c5861f73.css",
+    "main.js": "/GameList/static/js/main.a5bf5490.js",
     "static/js/592.b75e677d.chunk.js": "/GameList/static/js/592.b75e677d.chunk.js",
     "static/media/celeste.png": "/GameList/static/media/celeste.851f4581fa8a55705a49.png",
     "static/media/terraria.png": "/GameList/static/media/terraria.5ed8f2ad126e4da0658d.png",
@@ -24,16 +24,14 @@
     "static/media/phasmophobia.jpg": "/GameList/static/media/phasmophobia.2783b386f2fb47fd93a0.jpg",
     "static/media/infographic-pop-1-197868.mp3": "/GameList/static/media/infographic-pop-1-197868.8a59765dd9e63e77708d.mp3",
     "static/media/icons8-close.svg": "/GameList/static/media/icons8-close.f2095136e4261505412282108bd0894e.svg",
-    "static/media/file-add.svg": "/GameList/static/media/file-add.8a8b0150a0f76c7d936eb105acb85726.svg",
-    "static/media/file-check.svg": "/GameList/static/media/file-check.057c692c3bb5800e7f1a85e7ce08a989.svg",
     "static/media/check_icon.svg": "/GameList/static/media/check_icon.a045ecf208c751cd75eb62d28a362056.svg",
     "index.html": "/GameList/index.html",
-    "main.78b8bf3c.css.map": "/GameList/static/css/main.78b8bf3c.css.map",
-    "main.a1e1f1e0.js.map": "/GameList/static/js/main.a1e1f1e0.js.map",
+    "main.c5861f73.css.map": "/GameList/static/css/main.c5861f73.css.map",
+    "main.a5bf5490.js.map": "/GameList/static/js/main.a5bf5490.js.map",
     "592.b75e677d.chunk.js.map": "/GameList/static/js/592.b75e677d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78b8bf3c.css",
-    "static/js/main.a1e1f1e0.js"
+    "static/css/main.c5861f73.css",
+    "static/js/main.a5bf5490.js"
   ]
 }
