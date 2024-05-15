@@ -3,6 +3,7 @@ This website represents a library that contains different types of videogames. I
 It is a good choice for people who want to track their progress in games or found some new games to play.
 
 My KAJ table:
+
 ![img.png](img.png)
 ![img_1.png](img_1.png)
 
