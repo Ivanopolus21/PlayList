@@ -1,4 +1,4 @@
-# GameList
+# PlayList
 This website represents a library that contains different types of videogames. It has two pages: "Browse", where you can see a list of all games on the website and add them to your own library; "Library", where are all your saved games displayed.
 It is a good choice for people who want to track their progress in games or found some new games to play.
 
