@@ -3,7 +3,7 @@ This website represents a library that contains different types of videogames. I
 It is a good choice for people who want to track their progress in games or found some new games to play.
 
 ## Get started
-The website is available on the following [link](https://ivanopolus21.github.io/GameList/).
+The website is available on the following [link](https://ivanopolus21.github.io/PlayList/).
 
 If you want to clone on download the project, in the project directory, you can run:
 
