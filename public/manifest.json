@@ -1,6 +1,6 @@
 {
-  "short_name": "GL",
-  "name": "GameList",
+  "short_name": "PL",
+  "name": "PlayList",
   "description": "The library for games, where you can add some games to your own library and choose their state:'Played before', 'Currently Playing' and so on.",
   "icons": [ {
     "src": "favicon.ico",
